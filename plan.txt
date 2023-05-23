@@ -1,0 +1,32 @@
+Use: https://geocode.xyz/api
+API call: https://geocode.xyz/?locate=location&outputformat 
+Plus Leaflet map
+Perhaps look into using https://developers.google.com/maps
+
+
+Forward geocoding: place name into lat + long --> will probably use this and then use leaflet to display lat/long location on map
+
+
+error in json format:
+{ 
+  "matches": null,
+  "error": {
+    "description": "15. Your request did not produce any results.",
+    "code": "008"
+  },
+  "suggestion": {
+    "region": "AU", 
+    "locate": "9 11 DEODAR DRIVE BURLIEGH HEADS  4220 QLD "
+  }
+}
+
+Running the suggestion back to the API with the region parameter (if defined) produces the correct response:
+Example: https://geocode.xyz/9 11 DEODAR DRIVE BURLIEGH HEADS 4220 QLD?region=AU
+
+Application logic: 
+User looks up place:
+gets info in sidebar + map marker
+User can add markers for multiple locations. (distance between locations api?)
+User can clear map.
+
+Perhaps: create a separate page that displays all the places I've lived with some description. Create an csv file for that data.
