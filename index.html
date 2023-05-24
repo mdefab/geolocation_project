@@ -5,22 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./src/js/controller.js" type="module"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
     <link rel="stylesheet" href="./src/css/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <!-- <script defer src="practice.js"></script> -->
     <title>Interactive Map</title>
 </head>
 <body>
 <div class="container">
     <div class="sidebar">
-    <h2>Sidebar</h2>
+    <h2>Geolocate</h2>
     <label for="placename">Location to add marker</label>
     <input type="text" id="placename" name="placename">
     <button class="btn--map-marker"type="button">Add marker</button>
     <div class="map-description"></div>
 </div>
-<div class="mapview"> <h2>Map goes here</h2></div>
+<div class="map" id="map"> <h2>Enter a location to place it on the map! </h2></div>
 </div>
-
-
 </body>
 </html>

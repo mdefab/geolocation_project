@@ -1,29 +1,25 @@
 class mapView {
-    _parentElement = document.querySelector('.mapview');
-    data;
+    _parentElement = document.querySelector('.map');
 
-    //this view will generate a description box of the location + map
+    constructor(){
+      let map = L.map('map').setView([1, 1], 1);
+        console.log(map);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    }
 
-    _generateMarkup(){
-        return `
-        <h2> ${this._data.standard.city}, ${this._data.standard.countryname}
-        <p> Latitude: ${this._data.latt} Longtitude: ${this._data.longt} </p>`
-        };
+    // method to render a marker w/ a popup description (perhaps panto and/or zoom in on marker)
 
-
-    renderMap(data) {
-        if (!data || (Array.isArray(data) && data.length === 0))
-          return;
-    
-        this._data = data;
-        const markup = this._generateMarkup();
-    
-        this._clearMap();
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-      }
+    // renderMap(data) {
+    //     if (!data || (Array.isArray(data) && data.length === 0))
+    //       return;
+    //     this._clear();
+    //   }
 
 
-    _clearMap() {
+    _clear() {
         this._parentElement.innerHTML = '';
       };
 
