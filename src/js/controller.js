@@ -4,9 +4,9 @@ import sideBarView from "./views/sideBarView.js";
 import mapView from "./views/mapView.js";
 
 
-const controlMapMarkers = async function(){
+const controlMapMarkers = async function(location){
     // get data from model
-    const data = await model.getLatLong();
+    const data = await model.getLatLong(location);
     // provide data to View to display map marker
     mapView.renderMap(data);
 }
