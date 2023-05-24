@@ -18,7 +18,7 @@ export const state = {
 // 1) get lat/long from location 
 
 export const getLatLong = async function(location){
-    const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH}`
+    const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
     const data = await getJSON(urlEndpoint)
     state.latitude = data.latt;
     state.longtitude = data.longt;
