@@ -3,6 +3,7 @@ API call: https://geocode.xyz/?locate=location&outputformat
 Plus Leaflet map
 Perhaps look into using https://developers.google.com/maps
 
+Perhaps have model state contain list of markers so can render many markers on the map and perhaps save to local storage.
 
 Forward geocoding: place name into lat + long --> will probably use this and then use leaflet to display lat/long location on map
 

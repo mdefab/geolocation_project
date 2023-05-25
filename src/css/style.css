@@ -6,17 +6,44 @@
 .sidebar{
     display:flex;
     flex-direction: column;
+    padding: 1rem;
+    background-color: lightgreen;
 }
 
-#map{
-    height:100%;
+.sidebar h2 {
+    color: orangered;
+    font-weight: bold;
 }
+
+.sidebar span {
+    color:blue;
+}
+
+.sidebar label {
+    color:rgb(1, 49, 1);
+}
+
+.btn--map-marker {
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    color:orangered;
+    font-weight: bold;
+    background-color: darkgreen;
+}
+
 
 .map-description {
     border: solid black;
     height: 20rem;
+    padding:1rem;
+    background-color: lightblue;
 }
 
 .map-description p {
     font-size: 1rem;
+}
+
+#map{
+    height:100%;
 }

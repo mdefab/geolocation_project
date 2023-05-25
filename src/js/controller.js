@@ -9,8 +9,10 @@ const controlMapMarkers = async function(location){
     // get data from model
     const data = await model.getGeoData(location);
     // provide data to View to display map marker
-    mapView.renderMap(data);
+    // mapView.renderMap(data);
     mapInfoView.render(data);
+    mapView.addMapMarker(data);
+    console.log(model.state);
 }
 
 const init = function(){

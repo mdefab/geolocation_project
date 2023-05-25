@@ -11,7 +11,7 @@ import { getJSON } from "./helper.js";
 
 
 export const state = {
-
+    markers: [],
 };
 
 
@@ -20,10 +20,12 @@ export const state = {
 export const getGeoData = async function(location){
     const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
     const data = await getJSON(urlEndpoint)
-    state.latitude = data.latt;
-    state.longtitude = data.longt;
-    state.city = data.standard.city;
-    state.country = data.standard.countryname;
+    state.markers.push(
+    {latitude: data.latt,
+    longtitude: data.longt,
+    city: data.standard.city,
+    country: data.standard.countryname}
+    )
     return data;
 };
 
