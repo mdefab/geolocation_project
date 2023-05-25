@@ -18,15 +18,20 @@ export const state = {
 // 1) get lat/long from location 
 
 export const getGeoData = async function(location){
-    const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
-    const data = await getJSON(urlEndpoint)
-    state.markers.push(
-    {latitude: data.latt,
-    longtitude: data.longt,
-    city: data.standard.city,
-    country: data.standard.countryname}
-    )
-    return data;
+    try{
+        const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
+        const data = await getJSON(urlEndpoint)
+        if (data.error) throw new Error(data.error.description)
+        state.markers.push(
+        {latitude: data.latt,
+        longtitude: data.longt,
+        city: data.standard.city,
+        country: data.standard.countryname})
+
+        return data;
+    }catch(err){
+        throw(err)
+    }
 };
 
 // 2) get map from lat/long 

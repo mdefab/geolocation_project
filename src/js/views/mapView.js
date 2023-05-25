@@ -2,7 +2,7 @@ class mapView {
     _parentElement = document.querySelector('.map');
 
     constructor(){
-        let map = L.map('map').setView([1, 1], 1);
+        let map = L.map('map').setView([0, 0], 1.5);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'

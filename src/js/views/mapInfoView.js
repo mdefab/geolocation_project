@@ -4,7 +4,7 @@ class mapInfoView {
 
     _generateMarkup(){
         return `
-        <h2> ${this._data.standard.city}, ${this._data.standard.countryname}
+        <h2> ${this._data.standard.city? this._data.standard.city :''}, ${this._data.standard.countryname}
         <p> Latitude: ${this._data.latt} Longtitude: ${this._data.longt} </p>`
         };
 
