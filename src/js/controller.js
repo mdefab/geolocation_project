@@ -12,7 +12,6 @@ const controlMapMarkers = async function(location){
     // mapView.renderMap(data);
     mapInfoView.render(data);
     mapView.addMapMarker(data);
-    console.log(model.state);
 }
 
 const init = function(){
