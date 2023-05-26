@@ -14,7 +14,7 @@ const controlMapMarkers = async function(location){
     mapInfoView.render(data);
     mapView.addMapMarker(data);
     }catch(err){
-        console.log(err);
+        mapInfoView.renderError(err);
     }
 }
 

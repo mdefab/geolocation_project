@@ -20,6 +20,12 @@ class mapInfoView {
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
 
+    renderError(err){
+        const markup = `<p> ${err}</p>`
+        this._clear();
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
+      }
+
 
     _clear() {
         this._parentElement.innerHTML = '';

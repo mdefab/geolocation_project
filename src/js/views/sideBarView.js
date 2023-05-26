@@ -9,7 +9,7 @@ class sideBarView {
             if(!this._location) return;
             handler(this._location);
         })
-    }
+    };
 };
 
 
