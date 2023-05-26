@@ -21,7 +21,7 @@ class mapInfoView {
       }
 
     renderError(err){
-        const markup = `<p> ${err}</p>`
+        const markup = `<p> ${err}</p> <p>The location may be a street address/postal code/landmark/ip address/city name/etc. </p>`
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
