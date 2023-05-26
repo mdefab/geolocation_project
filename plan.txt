@@ -30,4 +30,6 @@ gets info in sidebar + map marker
 User can add markers for multiple locations. (distance between locations api?)
 User can clear map.
 
-Perhaps: create a separate page that displays all the places I've lived with some description. Create an csv file for that data.
+UI: add keydown event for pressing enter instead of button
+
+Perhaps: create a button that displays all the places I've lived with some description. Create a csv file for that data.
