@@ -1,6 +1,11 @@
+html, body {
+    height:100%;
+}
+
 .container{
     display: grid;
     grid-template-columns: 1fr 4fr;
+    height: 100%;
 }
 
 .sidebar{
@@ -23,25 +28,39 @@
     color:rgb(1, 49, 1);
 }
 
-.btn--map-marker {
+.btn {
     border-radius: 10px;
     margin: 0.5rem;
     padding: 0.5rem;
     color:orangered;
     font-weight: bold;
     background-color: darkgreen;
+    border: solid 1px black;
 }
 
 
 .map-description {
-    border: solid black;
-    height: 20rem;
+    border: solid 1px black;
+    height: 15rem;
+    overflow:auto;
     padding:1rem;
     background-color: lightblue;
 }
 
 .map-description p {
     font-size: 1rem;
+}
+
+.map-description h2 {
+    font-size: 1.2rem;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    justify-self: start;
+
 }
 
 #map{

@@ -18,22 +18,9 @@ class mapView {
       const popUpContent = `${data.standard.city? data.standard.city: ""} ${data.standard.countryname}`;
       this._L.marker([data.latt, data.longt]).addTo(this._map).bindPopup(popUpContent).openPopup();;
     }
-    // method to render a marker w/ a popup description (perhaps panto and/or zoom in on marker)
-
-    // renderMap(data) {
-    //     if (!data || (Array.isArray(data) && data.length === 0))
-    //       return;
-    //     this._clear();
-    //   }
-
-
-    _clear() {
-        this._parentElement.innerHTML = '';
-      };
 
     };
 
 
 export default new mapView();
 
-//perhaps render error message if error or no data

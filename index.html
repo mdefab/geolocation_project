@@ -18,11 +18,16 @@
 <body>
 <div class="container">
     <div class="sidebar">
-    <h2><span>Marker</span>MAP</h2>
+    <h2><span>MARKER</span>MAP</h2>
     <label for="placename">Location to add marker:</label>
     <input type="text" id="placename" name="placename">
-    <button class="btn--map-marker"type="button">ADD MARKER</button>
+    <button class="btn btn--map-marker"type="button">ADD MARKER</button>
     <div class="map-description"></div>
+    <div class="buttons-container">
+    <div><button class="btn btn--view-data" type="button">View marker data</button></div>
+    <div><button class="btn btn--clear-map" type="button">Clear map</button></div>
+    </div> 
+    <div><button class="btn btn--michael-data" type="button">See where I've lived!</button></div> 
 </div>
 <div class="map" id="map"></div>
 </div>
