@@ -16,10 +16,25 @@ const controlMapMarkers = async function(location){
     }catch(err){
         mapInfoView.renderError(err);
     }
-}
+};
+
+const controlViewData = function(){
+    console.log("View Data")
+};
+
+const controlClearMap = function(){
+    console.log("Clear Map")
+};
+
+const controlViewMichaelMarkers = function(){
+    console.log("Michael's Markers")
+};
 
 const init = function(){
     sideBarView._addHandlerMapMarker(controlMapMarkers);
+    sideBarView._addHandlerViewData(controlViewData);
+    sideBarView._addHandlerClearMap(controlClearMap);
+    sideBarView._addHandlerViewMichaelMarkers(controlViewMichaelMarkers);
 };
 
 init();
