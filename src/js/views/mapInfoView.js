@@ -4,7 +4,7 @@ class mapInfoView {
     _generateMarkup(data){
         return `
         <h2> ${data.standard.city? data.standard.city :''}, ${data.standard.countryname}
-        <p> Latitude: ${Number(data.latt).toFixed(2)} Longtitude: ${Number(data.longt).toFixed(2)} </p>`
+        <p> <u>Latitude:</u> ${Number(data.latt).toFixed(2)} <u>Longtitude:</u> ${Number(data.longt).toFixed(2)} </p>`
         };
 
 
