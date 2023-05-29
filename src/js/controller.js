@@ -35,8 +35,8 @@ const controlClearMap = function(){
     mapInfoView.clear();
 };
 
-const controlViewMichaelMarkers = function(){
-    console.log("Michael's Markers")
+const controlViewMichaelMarkers = async function(){
+    await model.michaelMarkerData();
 };
 
 const init = function(){

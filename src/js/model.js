@@ -1,6 +1,7 @@
 /* maintains state: state object, createMapobject function, loadResults object, ~upload data function */
 
 import { GeocodeURL } from "./config.js";
+import { MichaelData } from "./config.js";
 import { AUTH } from "./env.js";
 import { getJSON } from "./helper.js";
 
@@ -21,7 +22,8 @@ export const getGeoData = async function(location){
     try{
         const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
         const data = await getJSON(urlEndpoint)
-        if (data.error) throw new Error(data.error.description)
+        console.log(data);
+        if (data.error) throw new Error("Error fetching location")
         
         const marker = {latitude: data.latt,
         longtitude: data.longt,
@@ -39,11 +41,24 @@ export const clearMarkersData = function(){
     state.markers = [];
 }
 
-// 2) get map from lat/long 
 
-// 2b) Other info to display?
+const sleep = function(ms){
+    return new Promise((resolve) => setTimeout(resolve, ms)) 
+};
 
-// test model connection to controller:
+
+// Error: fetch throttling because too many requests for unpaid category (over Rate Limit). have to slow it down with a timeout function.
+// TODO: fix this functino to avoid rate limit throttle for api call
+export const michaelMarkerData = function(){
+    clearMarkersData();
+    MichaelData.map(async data => {
+        await sleep(1000).then(console.log(data.location))
+    })
+    };
+    
+
+
+
 
 
 
