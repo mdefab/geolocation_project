@@ -26,7 +26,6 @@ class mapInfoView {
           <p> <strong> ${index + 1}) ${marker.city? marker.city :''}, ${marker.country} </strong><br>
            <u>Latitude:</u> ${Number(marker.latitude).toFixed(2)} <u>Longtitude:</u> ${Number(marker.longtitude).toFixed(2)} </p>`
         }).join(" ");
-        console.log(markup);
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
