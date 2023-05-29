@@ -19,7 +19,14 @@ const controlMapMarkers = async function(location){
 };
 
 const controlViewData = function(){
-    console.log("View Data")
+    try {
+        const data = model.state.markers;
+        if(!data || (Array.isArray(data) && data.length === 0)) throw new Error("No marker data available. Please add markers first.")
+        mapInfoView.renderAll(data);
+    } catch(err){
+        mapInfoView.renderError(err);
+    }
+    return
 };
 
 const controlClearMap = function(){
@@ -31,10 +38,10 @@ const controlViewMichaelMarkers = function(){
 };
 
 const init = function(){
-    sideBarView._addHandlerMapMarker(controlMapMarkers);
-    sideBarView._addHandlerViewData(controlViewData);
-    sideBarView._addHandlerClearMap(controlClearMap);
-    sideBarView._addHandlerViewMichaelMarkers(controlViewMichaelMarkers);
+    sideBarView.addHandlerMapMarker(controlMapMarkers);
+    sideBarView.addHandlerViewData(controlViewData);
+    sideBarView.addHandlerClearMap(controlClearMap);
+    sideBarView.addHandlerViewMichaelMarkers(controlViewMichaelMarkers);
 };
 
 init();

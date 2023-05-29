@@ -6,7 +6,7 @@ class sideBarView {
     _btnMichael= document.querySelector('.btn--michael-data');
     _location;
 
-    _addHandlerMapMarker(handler){
+    addHandlerMapMarker(handler){
         this._btnMap.addEventListener('click', function(){
             this._location = document.getElementById('placename').value;
             if(!this._location) return;
@@ -14,20 +14,20 @@ class sideBarView {
         })
     };
 
-    _addHandlerViewData(handler){
+    addHandlerViewData(handler){
         this._btnData.addEventListener('click', function(){
             handler();
         })
         
     };
 
-    _addHandlerClearMap(handler){
+    addHandlerClearMap(handler){
         this._btnClear.addEventListener('click', function(){
             handler();
         })
     };
 
-    _addHandlerViewMichaelMarkers(handler){
+    addHandlerViewMichaelMarkers(handler){
         this._btnMichael.addEventListener('click', function(){
             handler();
         })
