@@ -15,12 +15,12 @@ html, body {
     background-color: lightgreen;
 }
 
-.sidebar h2 {
+.main-header {
     color: orangered;
     font-weight: bold;
 }
 
-.sidebar span {
+.main-header span {
     color:blue;
 }
 
@@ -45,6 +45,7 @@ html, body {
     overflow:auto;
     padding:1rem;
     background-color: lightblue;
+    color: black;
 }
 
 .map-description p {

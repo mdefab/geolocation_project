@@ -4,7 +4,7 @@ class mapInfoView {
     _generateMarkup(data){
         return `
         <h2> ${data.standard.city? data.standard.city :''}, ${data.standard.countryname}
-        <p> Latitude: ${data.latt} Longtitude: ${data.longt} </p>`
+        <p> Latitude: ${Number(data.latt).toFixed(2)} Longtitude: ${Number(data.longt).toFixed(2)} </p>`
         };
 
 
@@ -21,11 +21,11 @@ class mapInfoView {
 
     renderAll(data){
         this._data = data;
-        const markup = data.map(marker => {
+        const markup = data.map((marker, index) => {
           return `
-          <h2> ${marker.city? marker.city :''}, ${marker.country}
-          <p> Latitude: ${marker.latitude} Longtitude: ${marker.longtitude} </p>`
-        }).join("<br>");
+          <p> <strong> ${index + 1}) ${marker.city? marker.city :''}, ${marker.country} </strong><br>
+           <u>Latitude:</u> ${Number(marker.latitude).toFixed(2)} <u>Longtitude:</u> ${Number(marker.longtitude).toFixed(2)} </p>`
+        }).join(" ");
         console.log(markup);
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
