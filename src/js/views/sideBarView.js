@@ -11,12 +11,14 @@ class sideBarView {
         this._btnMap.addEventListener('click', function(){
             this._location = document.getElementById('placename').value;
             if(!this._location) return;
+            document.getElementById('placename').value = '';
             handler(this._location);
         })
         document.addEventListener('keydown', function(e){
             if(e.key==="Enter"){
                 this._location = document.getElementById('placename').value;
                 if(!this._location) return;
+                document.getElementById('placename').value = '';
                 handler(this._location);
             }
         })

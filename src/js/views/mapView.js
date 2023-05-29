@@ -1,5 +1,7 @@
 class mapView {
     _parentElement = document.querySelector('.map');
+    _mapMarkers = [];
+    
 
     constructor(){
         let map = L.map('map').setView([0, 0], 1.5);
@@ -15,8 +17,14 @@ class mapView {
     addMapMarker(data){
       if (!data || (Array.isArray(data) && data.length === 0))
           return;
-      const popUpContent = `${data.standard.city? data.standard.city: ""} ${data.standard.countryname}`;
-      this._L.marker([data.latt, data.longt]).addTo(this._map).bindPopup(popUpContent).openPopup();;
+      const popUpContent = `${data.city? data.city: ""} ${data.country}`;
+      let marker = this._L.marker([data.latitude, data.longtitude]).addTo(this._map).bindPopup(popUpContent).openPopup();
+      this._mapMarkers.push(marker);
+    }
+
+    clearMapMarkers(){
+        this._mapMarkers.forEach(marker => marker.remove());
+        this._mapMarkers = [];
     }
 
     };

@@ -3,8 +3,8 @@ class mapInfoView {
 
     _generateMarkup(data){
         return `
-        <h2> ${data.standard.city? data.standard.city :''}, ${data.standard.countryname}
-        <p> <u>Latitude:</u> ${Number(data.latt).toFixed(2)} <u>Longtitude:</u> ${Number(data.longt).toFixed(2)} </p>`
+        <h2> ${data.city? data.city :''}, ${data.country}
+        <p> <u>Latitude:</u> ${Number(data.latitude).toFixed(2)} <u>Longtitude:</u> ${Number(data.longtitude).toFixed(2)} </p>`
         };
 
 
@@ -15,7 +15,7 @@ class mapInfoView {
         // this._data = data;
         const markup = this._generateMarkup(data);
     
-        this._clear();
+        this.clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
 
@@ -26,19 +26,19 @@ class mapInfoView {
           <p> <strong> ${index + 1}) ${marker.city? marker.city :''}, ${marker.country} </strong><br>
            <u>Latitude:</u> ${Number(marker.latitude).toFixed(2)} <u>Longtitude:</u> ${Number(marker.longtitude).toFixed(2)} </p>`
         }).join(" ");
-        this._clear();
+        this.clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
     
 
     renderError(err){
         const markup = `<p> ${err}</p> <p>The location may be a street address/postal code/landmark/ip address/city name/etc. </p>`
-        this._clear();
+        this.clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
       }
 
 
-    _clear() {
+    clear() {
         this._parentElement.innerHTML = '';
       };
 

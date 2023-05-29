@@ -22,17 +22,22 @@ export const getGeoData = async function(location){
         const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
         const data = await getJSON(urlEndpoint)
         if (data.error) throw new Error(data.error.description)
-        state.markers.push(
-        {latitude: data.latt,
+        
+        const marker = {latitude: data.latt,
         longtitude: data.longt,
         city: data.standard.city,
-        country: data.standard.countryname})
+        country: data.standard.countryname};
+        state.markers.push(marker)
 
-        return data;
+        return marker;
     }catch(err){
         throw(err)
     }
 };
+
+export const clearMarkersData = function(){
+    state.markers = [];
+}
 
 // 2) get map from lat/long 
 

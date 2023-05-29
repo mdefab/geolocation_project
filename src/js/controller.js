@@ -30,7 +30,9 @@ const controlViewData = function(){
 };
 
 const controlClearMap = function(){
-    console.log("Clear Map")
+    model.clearMarkersData();
+    mapView.clearMapMarkers();
+    mapInfoView.clear();
 };
 
 const controlViewMichaelMarkers = function(){

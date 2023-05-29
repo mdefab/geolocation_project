@@ -27,9 +27,11 @@ Example: https://geocode.xyz/9 11 DEODAR DRIVE BURLIEGH HEADS 4220 QLD?region=AU
 Application logic: 
 User looks up place:
 gets info in sidebar + map marker
-User can add markers for multiple locations. (distance between locations api?)
-User can clear map.
+User can add markers for multiple locations. 
+Use can view marker data for all locations
+User can clear map markers and corresponding marker data
+User can view places I've lived
+User can remove last marker added or remove marker of choice
 
-UI: add keydown event for pressing enter instead of button
 
 Perhaps: create a button that displays all the places I've lived with some description. Create a csv file for that data.
