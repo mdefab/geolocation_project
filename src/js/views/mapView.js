@@ -15,7 +15,7 @@ class mapView {
     addMapMarker(data){
       if (!data || (Array.isArray(data) && data.length === 0))
           return;
-      const popUpContent = `${data.city? data.city: ""} ${data.country} ${data.description? `<br>${data.description}`: ""}`;
+      const popUpContent = `<b>${data.city? data.city: ""} ${data.country}</b> ${data.description? `<br>${data.description}`: ""}`;
       let marker = this._L.marker([data.latitude, data.longtitude]).addTo(this._map).bindPopup(popUpContent).openPopup();
       this._map.setView([data.latitude, data.longtitude], 1.5);
       marker.on('click', function(e){

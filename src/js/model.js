@@ -40,7 +40,7 @@ export const undoLastMarker = function(){
     return state.markers.pop();
 }
 
-
+//todo: install lodash and deepclone MichaelData first
 export const michaelMarkerData = function(){
     state.markers = MichaelData;
     return MichaelData;

@@ -12,7 +12,7 @@ class mapInfoView {
         if (!data || (Array.isArray(data) && data.length === 0))
           return;
     
-        const markup = `${deleted? `<h2> <u>Deleted:<u></h2>`: ""} ${this._generateMarkup(data)}`;
+        const markup = `${deleted? `<h2> <u>Deleted:</u></h2>`: ""} ${this._generateMarkup(data)}`;
     
         this.clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -22,7 +22,7 @@ class mapInfoView {
         this._data = data;
         const markup = data.map((marker, index) => {
           return `
-          <p> <strong> ${index + 1}) ${marker.city? marker.city :''}, ${marker.country} </strong><br>
+          <p> <b> ${index + 1}) ${marker.city? marker.city :''}, ${marker.country} </b><br>
            <u>Latitude:</u> ${Number(marker.latitude).toFixed(2)} <u>Longtitude:</u> ${Number(marker.longtitude).toFixed(2)} </p>`
         }).join(" ");
         this.clear();
