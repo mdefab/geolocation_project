@@ -37,6 +37,8 @@ const controlClearMap = function(){
 
 const controlViewMichaelMarkers = async function(){
     await model.michaelMarkerData();
+    console.log(model.state.markers);
+    
 };
 
 const init = function(){

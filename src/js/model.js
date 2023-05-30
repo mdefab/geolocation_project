@@ -2,6 +2,7 @@
 
 import { GeocodeURL } from "./config.js";
 import { MichaelData } from "./config.js";
+import { API_THROTTLE_MS } from "./config.js";
 import { AUTH } from "./env.js";
 import { getJSON } from "./helper.js";
 
@@ -47,13 +48,13 @@ const sleep = function(ms){
 };
 
 
-// Error: fetch throttling because too many requests for unpaid category (over Rate Limit). have to slow it down with a timeout function.
-// TODO: fix this functino to avoid rate limit throttle for api call
-export const michaelMarkerData = function(){
+// Error: fetch throttling because too many requests for unpaid category (over Rate Limit). have to slow it down to less than one per second with a timeout function.
+export const michaelMarkerData = async function(){
     clearMarkersData();
-    MichaelData.map(async data => {
-        await sleep(1000).then(console.log(data.location))
-    })
+    for(let i = 0; i < MichaelData.length; i++){
+        await getGeoData(MichaelData[i].location);
+        await sleep(API_THROTTLE_MS);
+    } 
     };
     
 

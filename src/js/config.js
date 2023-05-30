@@ -1,4 +1,5 @@
 export const TIMEOUT_SEC = 10;
+export const API_THROTTLE_MS = 1500; // neccessary to avoid hitting api call rate limit for free category
 export const GeocodeURL = "https://geocode.xyz/" /* full api: https://geocode.xyz/?locate=location&outputformat */
 export const MichaelData = [
     {location: "Kingston, ON",
