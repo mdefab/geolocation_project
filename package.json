@@ -1,0 +1,15 @@
+{
+  "name": "mapmarker",
+  "version": "1.0.0",
+  "description": "App receives a location and will output a marker of the location on a world  map,  plus it will  provide the user with the latitude and longtitude of the location.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Michael De Fab",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv-webpack": "^2.0.0",
+    "parcel": "^2.9.1"
+  }
+}
