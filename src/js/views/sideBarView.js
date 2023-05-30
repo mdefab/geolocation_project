@@ -3,6 +3,7 @@ class sideBarView {
     _btnMap = document.querySelector('.btn--map-marker');
     _btnData= document.querySelector('.btn--view-data');
     _btnClear= document.querySelector('.btn--clear-map');
+    _btnUndo = document.querySelector('.btn--undo-last-marker');
     _btnMichael= document.querySelector('.btn--michael-data');
     _location;
 
@@ -37,12 +38,19 @@ class sideBarView {
         })
     };
 
+    addHandlerUndoLastMarker(handler){
+        this._btnUndo.addEventListener('click', function(){
+            handler();
+        })
+    };
+    
     addHandlerViewMichaelMarkers(handler){
         this._btnMichael.addEventListener('click', function(){
             handler();
         })
         
     };
+
 
 };
 

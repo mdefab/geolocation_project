@@ -35,17 +35,27 @@ const controlClearMap = function(){
     mapInfoView.clear();
 };
 
-const controlViewMichaelMarkers = async function(){
-    await model.michaelMarkerData();
-    console.log(model.state.markers);
-    
+const undoLastMarker = function(){
+    const lastMarker = model.undoLastMarker();
+    mapView.undoMapMarker();
+    mapInfoView.render(lastMarker, true);
+
+};
+
+const controlViewMichaelMarkers = function(){
+    mapInfoView.clear();
+    mapView.clearMapMarkers();
+    const michaelMarkers = model.michaelMarkerData();
+    mapInfoView.renderAll(michaelMarkers);
+    michaelMarkers.forEach(marker => mapView.addMapMarker(marker));
 };
 
 const init = function(){
     sideBarView.addHandlerMapMarker(controlMapMarkers);
     sideBarView.addHandlerViewData(controlViewData);
     sideBarView.addHandlerClearMap(controlClearMap);
-    sideBarView.addHandlerViewMichaelMarkers(controlViewMichaelMarkers);
+    sideBarView.addHandlerUndoLastMarker(undoLastMarker);
+    sideBarView.addHandlerViewMichaelMarkers(controlViewMichaelMarkers);   
 };
 
 init();

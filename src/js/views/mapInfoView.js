@@ -8,12 +8,11 @@ class mapInfoView {
         };
 
 
-    render(data) {
+    render(data, deleted=false) {
         if (!data || (Array.isArray(data) && data.length === 0))
           return;
     
-        // this._data = data;
-        const markup = this._generateMarkup(data);
+        const markup = `${deleted? `<h2> <u>Deleted:<u></h2>`: ""} ${this._generateMarkup(data)}`;
     
         this.clear();
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
