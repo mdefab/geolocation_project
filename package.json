@@ -9,6 +9,11 @@
   "author": "Michael De Fab",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.9.1"
+    "buffer": "^6.0.3",
+    "parcel": "^2.9.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.1"
   }
 }

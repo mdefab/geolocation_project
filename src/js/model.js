@@ -2,9 +2,9 @@
 
 import { GeocodeURL } from "./config.js";
 import { MichaelData } from "./config.js";
-import { AUTH } from "./env.js";
 import { getJSON } from "./helper.js";
 
+const AUTH = process.env.API_KEY;
 
 export const state = {
     markers: [],
