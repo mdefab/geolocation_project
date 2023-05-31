@@ -18,6 +18,7 @@
 <body>
 <div class="container">
     <div class="sidebar">
+    <img src="./src/img/logo.jpg" alt="logo" class="logo">
     <h2 class="main-header"><span>MARKER</span>MAP</h2>
     <label for="placename">Location to add marker:</label>
     <input type="text" id="placename" name="placename">
@@ -29,7 +30,13 @@
     <div><button class="btn btn--michael-data" type="button">Places I've lived!</button></div> 
     <div><button class="btn btn--undo-last-marker" type="button">UNDO MARKER</button></div>
     </div> 
-    
+    <div class="settings">
+        <h4><u>Zoom Settings</u> </h4>
+        <label for="zoom-on-click">On marker click: </label> <br>
+        <input type="number" id="zoom-on-click" name="zoom-on-click" min="0" max="40" value="10" onkeyup="if(value<0) value=0;if(value>40) value=40;"> <br>
+        <label for="zoom-on-add">On marker add: </label> <br>
+        <input type="number" id="zoom-on-add" name="zoom-on-add" min="0" max="40" value="3" onkeyup="if(value<0) value=0;if(value>40) value=40;">
+    </div>
     </div>
     <div class="map" id="map"></div>
 </div>

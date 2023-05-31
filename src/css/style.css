@@ -13,11 +13,23 @@ html, body {
     flex-direction: column;
     padding: 1rem;
     background-color: lightgreen;
+    position:relative;
+    z-index: -2;
+}
+
+.logo{
+    position: absolute;
+    top:2%;
+    right: 4%;
+    max-width:15%;
+    height:auto;
+    z-index: -1;
 }
 
 .main-header {
     color: orangered;
     font-weight: bold;
+    z-index: 10;
 }
 
 .main-header span {
@@ -62,6 +74,14 @@ html, body {
     align-items: start;
     justify-self: start;
 
+}
+
+.settings {
+    text-align: center;
+}
+
+.settings h4 {
+    margin-bottom: 0;
 }
 
 #map{

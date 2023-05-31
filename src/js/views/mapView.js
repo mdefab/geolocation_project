@@ -1,6 +1,6 @@
 class mapView {
-    _mapMarkers = [];
-    
+    _mapMarkers = []
+
     constructor(){
         let map = L.map('map').setView([0, 0], 1.5);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,9 +17,9 @@ class mapView {
           return;
       const popUpContent = `<b>${data.city? data.city: ""} ${data.country}</b> ${data.description? `<br>${data.description}`: ""}`;
       let marker = this._L.marker([data.latitude, data.longtitude]).addTo(this._map).bindPopup(popUpContent).openPopup();
-      this._map.setView([data.latitude, data.longtitude], 1.5);
+      this._map.setView([data.latitude, data.longtitude], Number(document.getElementById("zoom-on-add").value)/2);
       marker.on('click', function(e){
-        this._map.setView([e.latlng.lat, e.latlng.lng], 5);
+        this._map.setView([e.latlng.lat, e.latlng.lng], Number(document.getElementById("zoom-on-click").value)/2);
       });
       this._mapMarkers.push(marker);
     }
