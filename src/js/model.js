@@ -3,6 +3,7 @@
 import { GeocodeURL } from "./config.js";
 import { MichaelData } from "./config.js";
 import { getJSON } from "./helper.js";
+import cloneDeep from '../../node_modules/lodash-es/cloneDeep.js';
 
 const AUTH = process.env.API_KEY;
 
@@ -40,9 +41,10 @@ export const undoLastMarker = function(){
     return state.markers.pop();
 }
 
-//todo: install lodash and deepclone MichaelData first
 export const michaelMarkerData = function(){
-    state.markers = MichaelData;
+    // cloneDeep to avoid modifying MichaelData when popping items from state.markers with undoLastMarker since they were sharing the same reference
+    const cloneData = cloneDeep(MichaelData);
+    state.markers = cloneData;
     return MichaelData;
 }
 

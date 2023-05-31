@@ -26,7 +26,6 @@ const controlViewData = function(){
     } catch(err){
         mapInfoView.renderError(err);
     }
-    return
 };
 
 const controlClearMap = function(){
