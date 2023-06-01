@@ -4,3 +4,4 @@ dist
 .DS_Store
 testing.js
 .env
+plan.txt
