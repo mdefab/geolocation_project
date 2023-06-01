@@ -3,6 +3,9 @@ import * as model from './model.js';
 import sideBarView from "./views/sideBarView.js";
 import mapView from "./views/mapView.js";
 import mapInfoView from './views/mapInfoView.js';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import { async } from 'regenerator-runtime';
 
 
 const controlMapMarkers = async function(location){
