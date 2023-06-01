@@ -94,3 +94,9 @@ html, body {
     background-color: lightblue;
     padding-left: 1rem;
 }
+
+@media(max-width: 40rem){
+    .container {
+        display: block;
+    }
+}

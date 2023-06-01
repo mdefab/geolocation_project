@@ -32,4 +32,5 @@ Use can view marker data for all locations
 User can clear map markers and corresponding marker data
 User can view places I've lived
 User can remove last marker added or remove marker of choice
-Future idea: settings to adjust zoom on marker click or add.
+Settings to adjust zoom on marker click or add.
+Future idea: make mobile responsive
