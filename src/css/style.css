@@ -14,7 +14,6 @@ html, body {
     padding: 1rem;
     background-color: lightgreen;
     position:relative;
-    z-index: -2;
 }
 
 .logo{
@@ -23,13 +22,12 @@ html, body {
     right: 4%;
     max-width:15%;
     height:auto;
-    z-index: -1;
 }
 
 .main-header {
     color: orangered;
     font-weight: bold;
-    z-index: 10;
+    z-index: 2;
 }
 
 .main-header span {
@@ -48,8 +46,14 @@ html, body {
     font-weight: bold;
     background-color: darkgreen;
     border: solid 1px black;
+    transition: all 0.3s ease-out;
 }
 
+.btn:hover,
+.btn:active {
+    box-shadow:inset 0 0 0 1px rgb(138, 41, 6);
+    cursor: pointer;
+}
 
 .map-description {
     border: solid 1px black;
