@@ -18,7 +18,7 @@ export const getGeoData = async function(location){
     try{
         const urlEndpoint = `${GeocodeURL}${location}?json=1&auth=${AUTH? AUTH: ''}`
         const data = await getJSON(urlEndpoint)
-        if (data.error) throw new Error("Error fetching location")
+        if (data.error) throw new Error("Error fetching location. Try using a postal/zip code!")
         
         const marker = {latitude: data.latt,
         longtitude: data.longt,
